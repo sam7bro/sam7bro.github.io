@@ -22,7 +22,6 @@ const storage = firebase.storage();
 
 let places = [];
 let originalPlaces = [];
-let currentPlaceForQR = null;
 let currentPlaceForDetails = null;
 let tempEditImages = [];
 
@@ -51,20 +50,11 @@ const closeMenu = document.getElementById('closeMenu');
 const themeToggle = document.getElementById('themeToggle');
 const themeText = document.getElementById('themeText');
 
-const qrModalOverlay = document.getElementById('qrModalOverlay');
-const qrPlaceName = document.getElementById('qrPlaceName');
-const qrImageContainer = document.getElementById('qrImageContainer');
-const qrPlaceInfo = document.getElementById('qrPlaceInfo');
-const downloadQrBtn = document.getElementById('downloadQrBtn');
-const closeQrModal = document.getElementById('closeQrModal');
-
 const detailsPanel = document.getElementById('detailsPanel');
 const panelOverlay = document.getElementById('panelOverlay');
 const detailsImageGrid = document.getElementById('detailsImageGrid');
 const detailsTitle = document.getElementById('detailsTitle');
 const detailsDescription = document.getElementById('detailsDescription');
-const detailsDirectionBtn = document.getElementById('detailsDirectionBtn');
-const detailsQrBtn = document.getElementById('detailsQrBtn');
 const closePanel = document.getElementById('closePanel');
 const btnEdit = document.getElementById('btnEdit');
 
@@ -259,8 +249,6 @@ function createPlaceCard(place) {
         <div class="place-card-body"><p class="place-card-desc">${place.shortDescription}</p></div>
         <div class="place-card-buttons">
             <button class="btn btn-info" onclick="event.stopPropagation(); openDetailsPanel(${place.id})"><span class="material-symbols-outlined">info</span>Full Info</button>
-            <button class="btn btn-direction" onclick="event.stopPropagation(); openDirections(${place.latitude}, ${place.longitude})"><span class="material-symbols-outlined">directions</span></button>
-            <button class="btn btn-qr" onclick="event.stopPropagation(); openQRModal(${place.id})"><span class="material-symbols-outlined">qr_code_2</span></button>
         </div>
     `;
     
@@ -433,53 +421,6 @@ themeToggle.addEventListener('change', () => {
 });
 
 // ============================================
-// DIRECTIONS
-// ============================================
-function openDirections(lat, lng) { window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank'); }
-
-// ============================================
-// QR CODE MODAL
-// ============================================
-function openQRModal(placeId) {
-    const place = places.find(p => p.id === placeId);
-    if (!place) return;
-    currentPlaceForQR = place;
-    qrPlaceName.textContent = place.name;
-    qrPlaceInfo.textContent = place.shortDescription;
-    qrImageContainer.innerHTML = '';
-    new QRCode(qrImageContainer, { text: `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`, width: 200, height: 200, colorDark: '#1a202c', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
-    qrModalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-closeQrModal.addEventListener('click', () => { qrModalOverlay.classList.remove('active'); document.body.style.overflow = ''; });
-qrModalOverlay.addEventListener('click', (e) => { if (e.target === qrModalOverlay) { qrModalOverlay.classList.remove('active'); document.body.style.overflow = ''; } });
-
-// ============================================
-// DOWNLOAD QR
-// ============================================
-downloadQrBtn.addEventListener('click', () => {
-    if (!currentPlaceForQR) return;
-    const canvas = qrImageContainer.querySelector('canvas');
-    if (!canvas) return;
-    const downloadCanvas = document.createElement('canvas');
-    const ctx = downloadCanvas.getContext('2d');
-    const qrSize = 300, padding = 30, textHeight = 60;
-    downloadCanvas.width = qrSize + padding * 2;
-    downloadCanvas.height = qrSize + padding * 2 + textHeight;
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, downloadCanvas.width, downloadCanvas.height);
-    ctx.drawImage(canvas, padding, padding, qrSize, qrSize);
-    ctx.fillStyle = '#1a202c';
-    ctx.font = 'bold 18px Segoe UI, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(currentPlaceForQR.name, downloadCanvas.width / 2, qrSize + padding + 25);
-    const link = document.createElement('a');
-    link.download = `${currentPlaceForQR.name.replace(/\s+/g, '_')}_QR.png`;
-    link.href = downloadCanvas.toDataURL('image/png');
-    link.click();
-});
-
-// ============================================
 // DETAILS PANEL
 // ============================================
 function openDetailsPanel(placeId) {
@@ -520,8 +461,6 @@ function refreshViewMode(place) {
         }
     }
     detailsImageGrid.appendChild(fragment);
-    detailsDirectionBtn.onclick = () => openDirections(place.latitude, place.longitude);
-    detailsQrBtn.onclick = () => openQRModal(place.id);
 }
 
 closePanel.addEventListener('click', closeDetailsPanel);
@@ -682,7 +621,6 @@ document.addEventListener('keydown', (e) => {
             return;
         }
         if (detailsPanel.classList.contains('active')) closeDetailsPanel();
-        if (qrModalOverlay.classList.contains('active')) { qrModalOverlay.classList.remove('active'); document.body.style.overflow = ''; }
         if (sideMenu.classList.contains('active')) closeSideMenu();
     }
     if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && !e.ctrlKey && document.activeElement !== searchInput)) {
