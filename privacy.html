@@ -3,309 +3,997 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Discover Places</title>
+    <title>Privacy Policy - SKU Campus Companion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
     <style>
-        .terms-container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* ============================================
+           LEGAL PAGES - MODERN UI/UX (PRIVACY)
+           ============================================ */
+        
+        .legal-hero {
+            position: relative;
             padding: 40px 24px 60px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: -40px;
+            overflow: hidden;
         }
         
-        .terms-back {
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .legal-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .legal-back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            gap: 10px;
+            transform: translateX(-3px);
+        }
+        
+        .legal-back-btn .material-symbols-outlined {
+            font-size: 20px;
+        }
+        
+        .legal-hero-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .legal-hero-icon .material-symbols-outlined {
+            font-size: 40px;
+            color: white;
+        }
+        
+        .legal-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .legal-hero-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+        
+        .legal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .legal-meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .legal-meta-chip .material-symbols-outlined {
+            font-size: 16px;
+        }
+        
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .legal-section {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #10b981, #059669);
+            border-radius: 4px 0 0 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .legal-section:hover::before {
+            opacity: 1;
+        }
+        
+        .legal-section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        
+        .legal-section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .legal-section-number {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+        
+        .legal-section h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+            line-height: 1.3;
+        }
+        
+        .legal-section h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 20px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-section h3::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background: #10b981;
+            border-radius: 2px;
+        }
+        
+        .legal-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .legal-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+        
+        .legal-list li {
+            position: relative;
+            padding: 10px 0 10px 32px;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            line-height: 1.6;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .legal-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .legal-list li::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .legal-alert {
+            display: flex;
+            gap: 12px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .legal-alert .material-symbols-outlined {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .legal-alert-info {
+            background: #dbeafe;
+            color: #1e3a5f;
+            border: 1px solid #2563eb;
+        }
+        
+        .legal-alert-info .material-symbols-outlined {
+            color: #2563eb;
+        }
+        
+        [data-theme="dark"] .legal-alert-info {
+            background: #1e3a5f;
+            color: #dbeafe;
+        }
+        
+        .legal-alert-success {
+            background: #d1fae5;
+            color: #064e3b;
+            border: 1px solid #10b981;
+        }
+        
+        .legal-alert-success .material-symbols-outlined {
+            color: #10b981;
+        }
+        
+        [data-theme="dark"] .legal-alert-success {
+            background: #064e3b;
+            color: #d1fae5;
+            border-color: #10b981;
+        }
+        
+        .legal-contact-card {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            color: white;
+            margin-top: 32px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-contact-card .material-symbols-outlined {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .legal-contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .legal-contact-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .legal-contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--accent);
+            padding: 14px 28px;
+            background: white;
+            color: #059669;
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-            transition: gap 0.3s ease;
-        }
-        
-        .terms-back:hover {
-            gap: 12px;
-        }
-        
-        .terms-container h1 {
-            font-size: 2rem;
+            border-radius: 50px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        
-        .terms-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
-        
-        .terms-container h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-        
-        .terms-container h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        
-        .terms-container p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
             font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         
-        .terms-container ul {
-            color: var(--text-secondary);
-            line-height: 1.8;
+        .legal-contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .legal-toc {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .legal-toc-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 16px;
-            padding-left: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
         }
         
-        .terms-container ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+        .legal-toc-header .material-symbols-outlined {
+            color: #10b981;
+            font-size: 24px;
         }
         
-        .terms-container a {
-            color: var(--accent);
-            text-decoration: underline;
+        .legal-toc-header h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
         }
-
-        .terms-hero-gap {
-            text-align: center;
-            padding: 20px 0;
+        
+        .legal-toc-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-        .permission-table {
+        
+        .legal-toc-list a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .legal-toc-list a:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            transform: translateX(3px);
+        }
+        
+        .legal-toc-list a::before {
+            content: '→';
+            color: #10b981;
+            font-weight: 700;
+            opacity: 0.6;
+        }
+        
+        .legal-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             margin: 16px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
             font-size: 0.9rem;
         }
-
-        .permission-table th,
-        .permission-table td {
-            border: 1px solid var(--border-color, #ddd);
-            padding: 10px 12px;
-            text-align: left;
-            color: var(--text-secondary);
-        }
-
-        .permission-table th {
-            background: var(--accent);
+        
+        .legal-table th {
+            background: linear-gradient(135deg, #10b981, #059669);
             color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .legal-table td {
+            padding: 14px 16px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+        
+        .legal-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .legal-table tr:hover td {
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .legal-table td:first-child {
             font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 500;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
+        }
+        
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .legal-hero {
+                padding: 30px 20px 50px;
+            }
+            
+            .legal-hero h1 {
+                font-size: 1.7rem;
+            }
+            
+            .legal-hero-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .legal-hero-icon .material-symbols-outlined {
+                font-size: 32px;
+            }
+            
+            .legal-container {
+                padding: 40px 16px 60px;
+            }
+            
+            .legal-section {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .legal-section-header {
+                gap: 12px;
+            }
+            
+            .legal-section-number {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+                font-size: 0.9rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 1.05rem;
+            }
+            
+            .legal-toc-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-contact-card {
+                padding: 24px 20px;
+            }
+            
+            .legal-contact-card h3 {
+                font-size: 1.15rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .terms-container h1 {
+            .legal-hero {
+                padding: 24px 16px 40px;
+                border-radius: 0 0 24px 24px;
+            }
+            
+            .legal-hero h1 {
                 font-size: 1.5rem;
             }
             
-            .terms-container h2 {
-                font-size: 1.15rem;
+            .legal-hero-subtitle {
+                font-size: 0.9rem;
             }
             
-            .terms-container {
-                padding: 24px 16px 40px;
+            .legal-meta {
+                gap: 8px;
+            }
+            
+            .legal-meta-chip {
+                padding: 5px 10px;
+                font-size: 0.72rem;
+            }
+            
+            .legal-section {
+                padding: 18px;
+            }
+            
+            .legal-section h2 {
+                font-size: 1rem;
+            }
+            
+            .legal-section p,
+            .legal-list li {
+                font-size: 0.88rem;
+            }
+            
+            .legal-table {
+                font-size: 0.8rem;
+            }
+            
+            .legal-table th,
+            .legal-table td {
+                padding: 10px 12px;
+            }
+            
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="top-header">
-        <div class="header-left">
-            <a href="index.html" style="text-decoration:none; color: var(--text-primary);">
-                <span class="material-symbols-outlined hamburger-icon">arrow_back</span>
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Legal Hero Header -->
+    <header class="legal-hero">
+        <div class="legal-hero-content">
+            <a href="index.html" class="legal-back-btn">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Home
             </a>
+            
+            <div class="legal-hero-icon">
+                <span class="material-symbols-outlined">shield</span>
+            </div>
+            
+            <h1>Privacy Policy</h1>
+            <p class="legal-hero-subtitle">
+                Your privacy matters. Learn how we collect, use, and protect your personal information.
+            </p>
+            
+            <div class="legal-meta">
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    Last Updated: September 2025
+                </span>
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">schedule</span>
+                    ~7 min read
+                </span>
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">verified_user</span>
+                    GDPR Compliant
+                </span>
+            </div>
         </div>
-        <div class="header-center">
-            <h1 class="site-title">Discover Places</h1>
-        </div>
-        <div class="header-right"></div>
     </header>
 
-    <!-- University Logo -->
-    <div class="terms-hero-gap">
-        <img src="images/university-logo.png" alt="Sri Krishnadevaraya University" class="university-logo">
-    </div>
+    <!-- Main Content -->
+    <main class="legal-container">
 
-    <!-- Privacy Content -->
-    <main class="terms-container">
-        <a href="index.html" class="terms-back">
-            <span class="material-symbols-outlined">arrow_back</span>
-            Back to Home
-        </a>
-        
-        <h1>Privacy Policy</h1>
-        <p class="terms-date">Last Updated: September 2025</p>
-        
-        <p>SKU Campus Companion ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and website.</p>
-        
-        <h2>1. Information We Collect</h2>
-        
-        <h3>1.1 Personal Information You Provide</h3>
-        <ul>
-            <li><strong>Profile Information:</strong> Full name, email address, phone number, branch, year of study, gender</li>
-            <li><strong>Account Credentials:</strong> Login information for authentication</li>
-            <li><strong>User Content:</strong> YouTube channel links, place descriptions you edit</li>
-        </ul>
-        
-        <h3>1.2 Automatically Collected Information</h3>
-        <ul>
-            <li><strong>Location Data:</strong> GPS coordinates when using navigation features (only while app is in use)</li>
-            <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
-            <li><strong>Usage Data:</strong> Features accessed, time spent, interaction patterns</li>
-            <li><strong>Camera Access:</strong> Only when you use the Geo Camera feature</li>
-        </ul>
-        
-        <h3>1.3 Information from Third Parties</h3>
-        <ul>
-            <li><strong>Firebase Services:</strong> Authentication, Firestore database, Cloud Messaging</li>
-            <li><strong>Google AdMob:</strong> Advertising identifiers (if ads are enabled)</li>
-        </ul>
-        
-        <h2>2. How We Use Your Information</h2>
-        <p>We use collected information to:</p>
-        <ul>
-            <li>Provide and maintain the App's functionality</li>
-            <li>Enable campus navigation and location services</li>
-            <li>Send push notifications about campus announcements</li>
-            <li>Process emergency SOS requests</li>
-            <li>Improve user experience and app performance</li>
-            <li>Display relevant advertisements (if applicable)</li>
-            <li>Respond to user inquiries and support requests</li>
-        </ul>
-        
-        <h2>3. Information Sharing</h2>
-        <p><strong>We DO NOT sell your personal information.</strong></p>
-        <p>We may share information:</p>
-        <ul>
-            <li><strong>With Campus Security:</strong> Location data during SOS activation only</li>
-            <li><strong>With Service Providers:</strong> Firebase (Google), AdMob for app functionality</li>
-            <li><strong>For Legal Compliance:</strong> When required by law or to protect rights</li>
-            <li><strong>With Your Consent:</strong> When you explicitly authorize sharing</li>
-        </ul>
-        
-        <h2>4. Data Security</h2>
-        <p>We implement appropriate security measures including:</p>
-        <ul>
-            <li>Encrypted data transmission (HTTPS/SSL)</li>
-            <li>Firebase Security Rules for database access</li>
-            <li>Secure authentication protocols</li>
-            <li>Regular security assessments</li>
-        </ul>
-        <p>However, no method of transmission over the Internet is 100% secure.</p>
-        
-        <h2>5. Data Retention</h2>
-        <ul>
-            <li><strong>Profile Data:</strong> Retained while account is active</li>
-            <li><strong>Location Data:</strong> Not stored permanently; used in real-time only</li>
-            <li><strong>Usage Analytics:</strong> Retained for up to 12 months</li>
-            <li><strong>Deleted Accounts:</strong> Data removed within 30 days of deletion request</li>
-        </ul>
-        
-        <h2>6. Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li><strong>Access:</strong> Request a copy of your personal data</li>
-            <li><strong>Correction:</strong> Update inaccurate information</li>
-            <li><strong>Deletion:</strong> Request account and data deletion</li>
-            <li><strong>Opt-out:</strong> Disable notifications or location services</li>
-            <li><strong>Portability:</strong> Request data in portable format</li>
-        </ul>
-        <p>To exercise these rights, contact: <a href="mailto:sameerbaba03@gmail.com">sameerbaba03@gmail.com</a></p>
-        
-        <h2>7. Children's Privacy</h2>
-        <p>The App is intended for university students (18+). We do not knowingly collect information from children under 13. If we learn we have collected such information, we will delete it promptly.</p>
-        
-        <h2>8. Permissions Used</h2>
-        <table class="permission-table">
-            <thead>
-                <tr>
-                    <th>Permission</th>
-                    <th>Purpose</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Location</td>
-                    <td>Navigation, SOS emergency, nearby places</td>
-                </tr>
-                <tr>
-                    <td>Camera</td>
-                    <td>Geo Camera feature for place detection</td>
-                </tr>
-                <tr>
-                    <td>Notifications</td>
-                    <td>Campus announcements, important updates</td>
-                </tr>
-                <tr>
-                    <td>Storage</td>
-                    <td>QR code saving, image caching</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td>Emergency contact calling</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h2>9. Third-Party Services</h2>
-        <p>Our app uses:</p>
-        <ul>
-            <li><strong>Firebase (Google):</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
-            <li><strong>Google AdMob:</strong> <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></li>
-            <li><strong>OpenStreetMap:</strong> <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank">Privacy Policy</a></li>
-            <li><strong>OSRM Routing:</strong> <a href="http://project-osrm.org/" target="_blank">Website</a></li>
-        </ul>
-        
-        <h2>10. Advertising</h2>
-        <p>If ads are displayed:</p>
-        <ul>
-            <li>We use Google AdMob for advertising</li>
-            <li>AdMob may collect device identifiers for ad personalization</li>
-            <li>You can opt-out of personalized ads in device settings</li>
-            <li>Some users may have ads disabled based on permissions</li>
-        </ul>
-        
-        <h2>11. International Transfers</h2>
-        <p>Your data may be transferred to and processed in countries outside India where our service providers operate. We ensure appropriate safeguards are in place.</p>
-        
-        <h2>12. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy periodically. We will notify you of significant changes through the App or email.</p>
-        
-        <h2>13. Contact Us</h2>
-        <p>For privacy-related questions or concerns:</p>
-        <p><strong>Email:</strong> <a href="mailto:sameerbaba03@gmail.com">sameerbaba03@gmail.com</a></p>
-        
-        <h2>14. Consent</h2>
-        <p>By using SKU Campus Companion, you consent to this Privacy Policy.</p>
+        <!-- Table of Contents -->
+        <div class="legal-toc">
+            <div class="legal-toc-header">
+                <span class="material-symbols-outlined">list</span>
+                <h3>Quick Navigation</h3>
+            </div>
+            <ul class="legal-toc-list">
+                <li><a href="#section-1">Information We Collect</a></li>
+                <li><a href="#section-2">How We Use It</a></li>
+                <li><a href="#section-3">Information Sharing</a></li>
+                <li><a href="#section-4">Data Security</a></li>
+                <li><a href="#section-5">Data Retention</a></li>
+                <li><a href="#section-6">Your Rights</a></li>
+                <li><a href="#section-7">Children's Privacy</a></li>
+                <li><a href="#section-8">Permissions Used</a></li>
+                <li><a href="#section-9">Third-Party Services</a></li>
+                <li><a href="#section-10">Advertising</a></li>
+                <li><a href="#section-11">International Transfers</a></li>
+                <li><a href="#section-12">Policy Changes</a></li>
+            </ul>
+        </div>
+
+        <!-- Welcome Alert -->
+        <div class="legal-alert legal-alert-success">
+            <span class="material-symbols-outlined">verified_user</span>
+            <div>
+                <strong>Your Privacy is Our Priority.</strong> SKU Campus Companion is committed to protecting your personal information. This policy explains what we collect, why we collect it, and how we keep it safe.
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="legal-section" id="section-1">
+            <div class="legal-section-header">
+                <div class="legal-section-number">1</div>
+                <h2>Information We Collect</h2>
+            </div>
+            
+            <h3>1.1 Personal Information You Provide</h3>
+            <ul class="legal-list">
+                <li><strong>Profile Information:</strong> Full name, email address, phone number, branch, year of study, gender</li>
+                <li><strong>Account Credentials:</strong> Login information for authentication</li>
+                <li><strong>User Content:</strong> YouTube channel links, place descriptions you edit</li>
+            </ul>
+            
+            <h3>1.2 Automatically Collected Information</h3>
+            <ul class="legal-list">
+                <li><strong>Location Data:</strong> GPS coordinates when using navigation features (only while app is in use)</li>
+                <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
+                <li><strong>Usage Data:</strong> Features accessed, time spent, interaction patterns</li>
+                <li><strong>Camera Access:</strong> Only when you use the Geo Camera feature</li>
+            </ul>
+            
+            <h3>1.3 Information from Third Parties</h3>
+            <ul class="legal-list">
+                <li><strong>Firebase Services:</strong> Authentication, Firestore database, Cloud Messaging</li>
+                <li><strong>Google AdMob:</strong> Advertising identifiers (if ads are enabled)</li>
+            </ul>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="legal-section" id="section-2">
+            <div class="legal-section-header">
+                <div class="legal-section-number">2</div>
+                <h2>How We Use Your Information</h2>
+            </div>
+            <p>We use collected information to:</p>
+            <ul class="legal-list">
+                <li>Provide and maintain the App's functionality</li>
+                <li>Enable campus navigation and location services</li>
+                <li>Send push notifications about campus announcements</li>
+                <li>Process emergency SOS requests</li>
+                <li>Improve user experience and app performance</li>
+                <li>Display relevant advertisements (if applicable)</li>
+                <li>Respond to user inquiries and support requests</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="legal-section" id="section-3">
+            <div class="legal-section-header">
+                <div class="legal-section-number">3</div>
+                <h2>Information Sharing</h2>
+            </div>
+            <div class="legal-alert legal-alert-success">
+                <span class="material-symbols-outlined">block</span>
+                <div><strong>We DO NOT sell your personal information.</strong> Ever.</div>
+            </div>
+            <p>We may share information only in these cases:</p>
+            <ul class="legal-list">
+                <li><strong>With Campus Security:</strong> Location data during SOS activation only</li>
+                <li><strong>With Service Providers:</strong> Firebase (Google), AdMob for app functionality</li>
+                <li><strong>For Legal Compliance:</strong> When required by law or to protect rights</li>
+                <li><strong>With Your Consent:</strong> When you explicitly authorize sharing</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="legal-section" id="section-4">
+            <div class="legal-section-header">
+                <div class="legal-section-number">4</div>
+                <h2>Data Security</h2>
+            </div>
+            <p>We implement appropriate security measures including:</p>
+            <ul class="legal-list">
+                <li>Encrypted data transmission (HTTPS/SSL)</li>
+                <li>Firebase Security Rules for database access</li>
+                <li>Secure authentication protocols</li>
+                <li>Regular security assessments</li>
+            </ul>
+            <div class="legal-alert legal-alert-info">
+                <span class="material-symbols-outlined">info</span>
+                <div>While we use industry-standard security, no method of transmission over the Internet is 100% secure.</div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="legal-section" id="section-5">
+            <div class="legal-section-header">
+                <div class="legal-section-number">5</div>
+                <h2>Data Retention</h2>
+            </div>
+            <ul class="legal-list">
+                <li><strong>Profile Data:</strong> Retained while account is active</li>
+                <li><strong>Location Data:</strong> Not stored permanently; used in real-time only</li>
+                <li><strong>Usage Analytics:</strong> Retained for up to 12 months</li>
+                <li><strong>Deleted Accounts:</strong> Data removed within 30 days of deletion request</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="legal-section" id="section-6">
+            <div class="legal-section-header">
+                <div class="legal-section-number">6</div>
+                <h2>Your Rights</h2>
+            </div>
+            <p>You have full control over your data. You have the right to:</p>
+            <ul class="legal-list">
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Correction:</strong> Update inaccurate information</li>
+                <li><strong>Deletion:</strong> Request account and data deletion</li>
+                <li><strong>Opt-out:</strong> Disable notifications or location services</li>
+                <li><strong>Portability:</strong> Request data in portable format</li>
+            </ul>
+            <p>To exercise these rights, contact: <a href="mailto:sameerbaba03@gmail.com" style="color: #10b981; font-weight: 600; text-decoration: none;">sameerbaba03@gmail.com</a></p>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="legal-section" id="section-7">
+            <div class="legal-section-header">
+                <div class="legal-section-number">7</div>
+                <h2>Children's Privacy</h2>
+            </div>
+            <p>The App is intended for university students (18+). We do not knowingly collect information from children under 13. If we learn we have collected such information, we will delete it promptly.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="legal-section" id="section-8">
+            <div class="legal-section-header">
+                <div class="legal-section-number">8</div>
+                <h2>Permissions Used</h2>
+            </div>
+            <p>Our app requests the following permissions for specific purposes:</p>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📍 Location</td>
+                        <td>Navigation, SOS emergency, nearby places</td>
+                    </tr>
+                    <tr>
+                        <td>📷 Camera</td>
+                        <td>Geo Camera feature for place detection</td>
+                    </tr>
+                    <tr>
+                        <td>🔔 Notifications</td>
+                        <td>Campus announcements, important updates</td>
+                    </tr>
+                    <tr>
+                        <td>💾 Storage</td>
+                        <td>QR code saving, image caching</td>
+                    </tr>
+                    <tr>
+                        <td>📞 Phone</td>
+                        <td>Emergency contact calling</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="legal-section" id="section-9">
+            <div class="legal-section-header">
+                <div class="legal-section-number">9</div>
+                <h2>Third-Party Services</h2>
+            </div>
+            <p>Our app uses these trusted services:</p>
+            <ul class="legal-list">
+                <li><strong>Firebase (Google):</strong> Authentication, database, cloud messaging</li>
+                <li><strong>Google AdMob:</strong> Advertising services (if enabled)</li>
+                <li><strong>OpenStreetMap:</strong> Map tile data</li>
+                <li><strong>OSRM Routing:</strong> Route calculation</li>
+            </ul>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="legal-section" id="section-10">
+            <div class="legal-section-header">
+                <div class="legal-section-number">10</div>
+                <h2>Advertising</h2>
+            </div>
+            <p>If ads are displayed:</p>
+            <ul class="legal-list">
+                <li>We use Google AdMob for advertising</li>
+                <li>AdMob may collect device identifiers for ad personalization</li>
+                <li>You can opt-out of personalized ads in device settings</li>
+                <li>Some users may have ads disabled based on permissions</li>
+            </ul>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="legal-section" id="section-11">
+            <div class="legal-section-header">
+                <div class="legal-section-number">11</div>
+                <h2>International Transfers</h2>
+            </div>
+            <p>Your data may be transferred to and processed in countries outside India where our service providers operate. We ensure appropriate safeguards are in place.</p>
+        </section>
+
+        <!-- Section 12 -->
+        <section class="legal-section" id="section-12">
+            <div class="legal-section-header">
+                <div class="legal-section-number">12</div>
+                <h2>Changes to This Policy</h2>
+            </div>
+            <p>We may update this Privacy Policy periodically. We will notify you of significant changes through the App or email.</p>
+        </section>
+
+        <!-- Contact Card -->
+        <div class="legal-contact-card">
+            <span class="material-symbols-outlined">privacy_tip</span>
+            <h3>Privacy Concerns?</h3>
+            <p>Have questions about your data? We're here to help.</p>
+            <a href="mailto:sameerbaba03@gmail.com" class="legal-contact-btn">
+                <span class="material-symbols-outlined">send</span>
+                Contact Privacy Team
+            </a>
+        </div>
+
+        <!-- Footer Info -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; color: var(--text-muted); font-size: 0.85rem;">
+            <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Home</a> · 
+                <a href="terms.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Terms</a> · 
+                <a href="privacy.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Privacy</a>
+            </p>
+        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
-        <p style="margin-top: 4px;">
-            <a href="index.html" style="color: var(--accent); text-decoration: none;">Home</a> | 
-            <a href="terms.html" style="color: var(--accent); text-decoration: none;">Terms & Conditions</a> |
-            <a href="privacy.html" style="color: var(--accent); text-decoration: none;">Privacy Policy</a>
-        </p>
-    </footer>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
 
-    <script src="script.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('readingProgress').style.width = scrolled + '%';
+            
+            const backToTop = document.getElementById('backToTop');
+            if (winScroll > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.legal-toc-list a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    const offset = 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Dark mode sync
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
 </body>
 </html>
