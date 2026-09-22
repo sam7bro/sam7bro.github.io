@@ -455,8 +455,6 @@ input:checked + .toggle-slider::before { transform: translateX(24px); }
 
 .details-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
 .details-description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
-.details-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-.details-buttons .btn { flex: 1; min-width: 140px; justify-content: center; padding: 14px 20px; font-size: 0.95rem; }
 
 /* ============================================
    EDIT MODE
@@ -595,12 +593,6 @@ input:checked + .toggle-slider::before { transform: translateX(24px); }
 .btn .material-symbols-outlined { font-size: 18px; }
 .btn-info { background-color: var(--accent); color: white; flex: 1; justify-content: center; }
 .btn-info:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
-.btn-direction { background-color: #10b981; color: white; }
-.btn-direction:hover { background-color: #059669; transform: translateY(-2px); }
-.btn-qr { background-color: #8b5cf6; color: white; }
-.btn-qr:hover { background-color: #7c3aed; transform: translateY(-2px); }
-.btn-download { background-color: var(--accent); color: white; width: 100%; justify-content: center; padding: 14px; font-size: 1rem; margin-top: 16px; }
-.btn-download:hover { background-color: var(--accent-hover); }
 
 /* ============================================
    BANNER AD SECTION
@@ -609,22 +601,6 @@ input:checked + .toggle-slider::before { transform: translateX(24px); }
 .ad-container { max-width: 728px; width: 100%; background-color: var(--bg-card); border-radius: 12px; padding: 12px; box-shadow: var(--shadow-sm); text-align: center; min-height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .ad-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
 .ad-container ins { display: block; width: 100%; min-height: 50px; max-height: 90px; }
-
-/* ============================================
-   QR MODAL
-   ============================================ */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--overlay); z-index: 500; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px; }
-.modal-overlay.active { opacity: 1; visibility: visible; }
-.modal-card { background-color: var(--modal-bg); border-radius: 20px; width: 100%; max-width: 400px; box-shadow: var(--shadow-xl); transform: scale(0.9) translateY(20px); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
-.modal-overlay.active .modal-card { transform: scale(1) translateY(0); }
-.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid var(--border); }
-.modal-header h3 { font-size: 1.2rem; font-weight: 600; }
-.close-modal { cursor: pointer; font-size: 22px; padding: 6px; border-radius: 50%; transition: background 0.2s ease; color: var(--text-primary); }
-.close-modal:hover { background: var(--bg-primary); }
-.modal-body { padding: 24px; text-align: center; }
-.qr-image-container { display: flex; justify-content: center; margin-bottom: 16px; }
-.qr-image-container img, .qr-image-container canvas { border-radius: 12px; box-shadow: var(--shadow-md); }
-.qr-info { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 8px; }
 
 /* ============================================
    FOOTER
@@ -649,7 +625,6 @@ input:checked + .toggle-slider::before { transform: translateX(24px); }
     .skeleton-card { width: 260px; height: 310px; }
     .details-panel { width: 90%; right: -100%; }
     .details-image-grid img, .details-image-placeholder { height: 130px; }
-    .modal-card { max-width: 90%; }
     .university-logo { width: 250px; }
 }
 
@@ -676,9 +651,7 @@ input:checked + .toggle-slider::before { transform: translateX(24px); }
     .details-image-grid { grid-template-columns: 1fr; }
     .details-image-grid img, .details-image-placeholder { height: 160px; }
     .details-title { font-size: 1.3rem; }
-    .details-buttons { flex-direction: column; }
     .edit-images-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .modal-card { max-width: 95%; }
     .side-menu { width: 85%; max-width: 300px; }
     .ad-section { padding: 10px 12px; }
     .ad-container { padding: 8px; min-height: 60px; }
