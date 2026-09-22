@@ -129,16 +129,6 @@
                 <div class="details-image-grid" id="detailsImageGrid"></div>
                 <h2 class="details-title" id="detailsTitle">Place Name</h2>
                 <p class="details-description" id="detailsDescription">Full description</p>
-                <div class="details-buttons">
-                    <button class="btn btn-direction" id="detailsDirectionBtn">
-                        <span class="material-symbols-outlined">directions</span>
-                        Get Directions
-                    </button>
-                    <button class="btn btn-qr" id="detailsQrBtn">
-                        <span class="material-symbols-outlined">qr_code_2</span>
-                        QR Code
-                    </button>
-                </div>
             </div>
             
             <!-- Edit Mode -->
@@ -223,24 +213,6 @@
         </div>
     </section>
 
-    <!-- ========== QR MODAL ========== -->
-    <div class="modal-overlay" id="qrModalOverlay">
-        <div class="modal-card" id="qrModal">
-            <div class="modal-header">
-                <h3 id="qrPlaceName">Place Name</h3>
-                <span class="material-symbols-outlined close-modal" id="closeQrModal">close</span>
-            </div>
-            <div class="modal-body">
-                <div class="qr-image-container" id="qrImageContainer"></div>
-                <p class="qr-info" id="qrPlaceInfo">Place information</p>
-                <button class="btn btn-download" id="downloadQrBtn">
-                    <span class="material-symbols-outlined">download</span>
-                    Download QR
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- ========== FOOTER ========== -->
     <footer class="site-footer">
         <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
@@ -250,7 +222,6 @@
         </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
