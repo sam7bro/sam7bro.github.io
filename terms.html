@@ -3,239 +3,950 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Discover Places</title>
+    <title>Terms & Conditions - SKU Campus Companion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
     <style>
-        .terms-container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* ============================================
+           LEGAL PAGES - MODERN UI/UX
+           ============================================ */
+        
+        /* Hero Header */
+        .legal-hero {
+            position: relative;
             padding: 40px 24px 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: -40px;
+            overflow: hidden;
         }
         
-        .terms-back {
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .legal-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .legal-back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            gap: 10px;
+            transform: translateX(-3px);
+        }
+        
+        .legal-back-btn .material-symbols-outlined {
+            font-size: 20px;
+        }
+        
+        .legal-hero-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .legal-hero-icon .material-symbols-outlined {
+            font-size: 40px;
+            color: white;
+        }
+        
+        .legal-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .legal-hero-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+        
+        .legal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .legal-meta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .legal-meta-chip .material-symbols-outlined {
+            font-size: 16px;
+        }
+        
+        /* Content Container */
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Content Sections */
+        .legal-section {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), #8b5cf6);
+            border-radius: 4px 0 0 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .legal-section:hover::before {
+            opacity: 1;
+        }
+        
+        .legal-section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        
+        .legal-section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        
+        .legal-section-number {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+        
+        .legal-section h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+            line-height: 1.3;
+        }
+        
+        .legal-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Lists */
+        .legal-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+        
+        .legal-list li {
+            position: relative;
+            padding: 10px 0 10px 32px;
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            line-height: 1.6;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .legal-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .legal-list li::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 18px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+        
+        /* Alert/Info boxes */
+        .legal-alert {
+            display: flex;
+            gap: 12px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .legal-alert .material-symbols-outlined {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .legal-alert-info {
+            background: var(--accent-light);
+            color: var(--text-primary);
+            border: 1px solid var(--accent);
+        }
+        
+        .legal-alert-info .material-symbols-outlined {
+            color: var(--accent);
+        }
+        
+        .legal-alert-warning {
+            background: #fef3c7;
+            color: #78350f;
+            border: 1px solid #fbbf24;
+        }
+        
+        .legal-alert-warning .material-symbols-outlined {
+            color: #f59e0b;
+        }
+        
+        [data-theme="dark"] .legal-alert-warning {
+            background: #422006;
+            color: #fde68a;
+            border-color: #92400e;
+        }
+        
+        .legal-alert-success {
+            background: #d1fae5;
+            color: #064e3b;
+            border: 1px solid #10b981;
+        }
+        
+        .legal-alert-success .material-symbols-outlined {
+            color: #10b981;
+        }
+        
+        [data-theme="dark"] .legal-alert-success {
+            background: #064e3b;
+            color: #d1fae5;
+            border-color: #10b981;
+        }
+        
+        /* Contact Card */
+        .legal-contact-card {
+            background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            color: white;
+            margin-top: 32px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .legal-contact-card .material-symbols-outlined {
+            font-size: 48px;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .legal-contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .legal-contact-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .legal-contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            padding: 14px 28px;
+            background: white;
             color: var(--accent);
             text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 32px;
-            font-size: 0.95rem;
-            transition: gap 0.3s ease;
-        }
-        
-        .terms-back:hover {
-            gap: 12px;
-        }
-        
-        .terms-container h1 {
-            font-size: 2rem;
+            border-radius: 50px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        
-        .terms-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
-        
-        .terms-container h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-        
-        .terms-container p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
             font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
         
-        .terms-container ul {
-            color: var(--text-secondary);
-            line-height: 1.8;
+        .legal-contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .legal-contact-btn .material-symbols-outlined {
+            font-size: 20px;
+        }
+        
+        /* Table of Contents */
+        .legal-toc {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .legal-toc-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-bottom: 16px;
-            padding-left: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
         }
         
-        .terms-container ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .terms-container a {
+        .legal-toc-header .material-symbols-outlined {
             color: var(--accent);
-            text-decoration: underline;
+            font-size: 24px;
         }
-
-        .terms-hero-gap {
-            text-align: center;
-            padding: 20px 0;
+        
+        .legal-toc-header h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .legal-toc-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .legal-toc-list a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .legal-toc-list a:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        
+        .legal-toc-list a::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 700;
+            opacity: 0.6;
+        }
+        
+        /* Permission Table */
+        .legal-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 16px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.9rem;
+        }
+        
+        .legal-table th {
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .legal-table td {
+            padding: 14px 16px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+        
+        .legal-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .legal-table tr:hover td {
+            background: var(--accent-light);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 500;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.5);
+        }
+        
+        /* Reading Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #8b5cf6);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .legal-hero {
+                padding: 30px 20px 50px;
+            }
+            
+            .legal-hero h1 {
+                font-size: 1.7rem;
+            }
+            
+            .legal-hero-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .legal-hero-icon .material-symbols-outlined {
+                font-size: 32px;
+            }
+            
+            .legal-container {
+                padding: 40px 16px 60px;
+            }
+            
+            .legal-section {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .legal-section-header {
+                gap: 12px;
+            }
+            
+            .legal-section-number {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+                font-size: 0.9rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 1.05rem;
+            }
+            
+            .legal-toc-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-contact-card {
+                padding: 24px 20px;
+            }
+            
+            .legal-contact-card h3 {
+                font-size: 1.15rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .terms-container h1 {
+            .legal-hero {
+                padding: 24px 16px 40px;
+                border-radius: 0 0 24px 24px;
+            }
+            
+            .legal-hero h1 {
                 font-size: 1.5rem;
             }
             
-            .terms-container h2 {
-                font-size: 1.15rem;
+            .legal-hero-subtitle {
+                font-size: 0.9rem;
             }
             
-            .terms-container {
-                padding: 24px 16px 40px;
+            .legal-meta {
+                gap: 8px;
+            }
+            
+            .legal-meta-chip {
+                padding: 5px 10px;
+                font-size: 0.72rem;
+            }
+            
+            .legal-section {
+                padding: 18px;
+            }
+            
+            .legal-section h2 {
+                font-size: 1rem;
+            }
+            
+            .legal-section p,
+            .legal-list li {
+                font-size: 0.88rem;
+            }
+            
+            .legal-table {
+                font-size: 0.8rem;
+            }
+            
+            .legal-table th,
+            .legal-table td {
+                padding: 10px 12px;
+            }
+            
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="top-header">
-        <div class="header-left">
-            <a href="index.html" style="text-decoration:none; color: var(--text-primary);">
-                <span class="material-symbols-outlined hamburger-icon">arrow_back</span>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Legal Hero Header -->
+    <header class="legal-hero">
+        <div class="legal-hero-content">
+            <a href="index.html" class="legal-back-btn">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Home
             </a>
+            
+            <div class="legal-hero-icon">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            
+            <h1>Terms & Conditions</h1>
+            <p class="legal-hero-subtitle">
+                Please read these terms carefully before using SKU Campus Companion. Your use of our app constitutes acceptance of these terms.
+            </p>
+            
+            <div class="legal-meta">
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    Last Updated: September 2025
+                </span>
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">schedule</span>
+                    ~5 min read
+                </span>
+                <span class="material-symbols-outlined" style="display:none;">version</span>
+                <span class="legal-meta-chip">
+                    <span class="material-symbols-outlined">verified</span>
+                    Version 1.0
+                </span>
+            </div>
         </div>
-        <div class="header-center">
-            <h1 class="site-title">Discover Places</h1>
-        </div>
-        <div class="header-right"></div>
     </header>
 
-    <!-- University Logo on Terms Page -->
-    <div class="terms-hero-gap">
-        <img src="images/university-logo.png" alt="Sri Krishnadevaraya University" class="university-logo">
-    </div>
+    <!-- Main Content -->
+    <main class="legal-container">
 
-    <!-- Terms Content -->
-    <main class="terms-container">
-        <a href="index.html" class="terms-back">
-            <span class="material-symbols-outlined">arrow_back</span>
-            Back to Home
-        </a>
-        
-        <h1>Terms & Conditions</h1>
-        <p class="terms-date">Last Updated: September 2025</p>
-        
-        <p>Welcome to SKU Campus Companion. By accessing and using this website and mobile application, you agree to be bound by the following Terms and Conditions. Please read them carefully before using our services.</p>
-        
-        <h2>1. Acceptance of Terms</h2>
-        <p>By downloading, installing, accessing, or using SKU Campus Companion ("the App" or "the Website"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use the App or Website.</p>
-        
-        <h2>2. Description of Service</h2>
-        <p>SKU Campus Companion is a campus navigation and information platform designed for Sri Krishnadevaraya University (SKU) students, faculty, and visitors. The service provides:</p>
-        <ul>
-            <li>Campus navigation with real-time GPS and turn-by-turn directions</li>
-            <li>Information about listed places including academic buildings, hostels, libraries, cafeterias, banks, hospitals, and sports facilities</li>
-            <li>Smart Geo Camera for location-based photo detection</li>
-            <li>YouTube Channels to discover and share campus content</li>
-            <li>Emergency SOS with instant location sharing</li>
-            <li>Emergency Contacts for hospitals, hostels, and security</li>
-            <li>Push Notifications for important announcements</li>
-            <li>QR code generation for easy location sharing</li>
-        </ul>
-        
-        <h2>3. User Responsibilities</h2>
-        <p>As a user of this App and Website, you agree to:</p>
-        <ul>
-            <li>Provide accurate profile information</li>
-            <li>Maintain the security of your account credentials</li>
-            <li>Not misuse the SOS emergency feature</li>
-            <li>Not share false or misleading content</li>
-            <li>Respect other users and campus property</li>
-            <li>Use the App and Website only for lawful purposes</li>
-            <li>Not attempt to gain unauthorized access to any part of the service</li>
-            <li>Not interfere with the proper working of the App or Website</li>
-        </ul>
-        
-        <h2>4. Location Services</h2>
-        <p>The App requires location access for navigation features. Location data is used solely for providing directions and emergency services. By using navigation features:</p>
-        <ul>
-            <li>You consent to location tracking while the App is active</li>
-            <li>Your location may be shared with campus security during SOS activation only</li>
-            <li>Location data is not stored permanently on our servers</li>
-            <li>Navigation accuracy depends on your device's GPS and network conditions</li>
-        </ul>
-        
-        <h2>5. User-Generated Content</h2>
-        <p>Users may add YouTube channels and edit place descriptions. By submitting content:</p>
-        <ul>
-            <li>You retain ownership of content you submit</li>
-            <li>You grant us a license to display and distribute your content within the App</li>
-            <li>We reserve the right to remove inappropriate or inaccurate content</li>
-            <li>You are responsible for ensuring your content does not violate any laws or third-party rights</li>
-        </ul>
-        
-        <h2>6. Emergency Features</h2>
-        <p>The SOS feature shares your location with campus security. This feature should only be used in genuine emergencies. Misuse of the emergency feature may result in:</p>
-        <ul>
-            <li>Account suspension or termination</li>
-            <li>Notification to campus authorities</li>
-            <li>Legal action if applicable</li>
-        </ul>
-        
-        <h2>7. QR Code Usage</h2>
-        <p>The QR codes generated by this App are for personal use to facilitate easy navigation to listed places. Users may:</p>
-        <ul>
-            <li>Download QR codes for personal, non-commercial use</li>
-            <li>Share QR codes to help others navigate to places</li>
-            <li>Not modify, sell, or redistribute QR codes for commercial purposes</li>
-        </ul>
-        
-        <h2>8. Accuracy Disclaimer</h2>
-        <p>While we strive for accuracy, campus information may change without notice. Always verify critical information through official university channels. We make no warranties or representations about the accuracy, completeness, or reliability of any content on the App or Website.</p>
-        
-        <h2>9. Limitation of Liability</h2>
-        <p>SKU Campus Companion and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the App or Website, including but not limited to:</p>
-        <ul>
-            <li>Navigation errors or inaccurate location data</li>
-            <li>Reliance on place descriptions or timings</li>
-            <li>Outdated information</li>
-            <li>Service interruptions or technical issues</li>
-        </ul>
-        
-        <h2>10. Third-Party Services</h2>
-        <p>The App and Website use third-party services including:</p>
-        <ul>
-            <li><strong>Firebase (Google):</strong> For authentication, database, and cloud messaging</li>
-            <li><strong>Google Maps:</strong> For navigation and location services</li>
-            <li><strong>Google AdMob:</strong> For advertising (if applicable)</li>
-            <li><strong>OpenStreetMap:</strong> For map tile data</li>
-            <li><strong>OSRM:</strong> For routing services</li>
-        </ul>
-        <p>We are not responsible for the content, policies, or practices of these third-party services.</p>
-        
-        <h2>11. Modifications</h2>
-        <p>We reserve the right to modify or update these Terms and Conditions at any time without prior notice. Changes will be effective immediately upon posting. Your continued use of the App or Website after any modifications indicates your acceptance of the updated terms.</p>
-        
-        <h2>12. Termination</h2>
-        <p>We may terminate or suspend your access to the App or Website immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms and Conditions.</p>
-        
-        <h2>13. Governing Law</h2>
-        <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the appropriate courts in Anantapur, Andhra Pradesh.</p>
-        
-        <h2>14. Contact Information</h2>
-        <p>If you have any questions, concerns, or feedback regarding these Terms and Conditions, please contact us at:</p>
-        <p><strong>Email:</strong> <a href="mailto:sameerbaba03@gmail.com">sameerbaba03@gmail.com</a></p>
+        <!-- Table of Contents -->
+        <div class="legal-toc">
+            <div class="legal-toc-header">
+                <span class="material-symbols-outlined">list</span>
+                <h3>Quick Navigation</h3>
+            </div>
+            <ul class="legal-toc-list">
+                <li><a href="#section-1">Acceptance of Terms</a></li>
+                <li><a href="#section-2">Description of Service</a></li>
+                <li><a href="#section-3">User Responsibilities</a></li>
+                <li><a href="#section-4">Location Services</a></li>
+                <li><a href="#section-5">User Content</a></li>
+                <li><a href="#section-6">Emergency Features</a></li>
+                <li><a href="#section-7">Accuracy Disclaimer</a></li>
+                <li><a href="#section-8">Limitation of Liability</a></li>
+                <li><a href="#section-9">Modifications</a></li>
+                <li><a href="#section-10">Termination</a></li>
+                <li><a href="#section-11">Governing Law</a></li>
+                <li><a href="#section-12">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Welcome Alert -->
+        <div class="legal-alert legal-alert-info">
+            <span class="material-symbols-outlined">waving_hand</span>
+            <div>
+                <strong>Welcome to SKU Campus Companion!</strong> By accessing or using our website and mobile application, you agree to be bound by the following Terms and Conditions.
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="legal-section" id="section-1">
+            <div class="legal-section-header">
+                <div class="legal-section-number">1</div>
+                <h2>Acceptance of Terms</h2>
+            </div>
+            <p>By downloading, installing, accessing, or using SKU Campus Companion ("the App" or "the Website"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use the App or Website.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="legal-section" id="section-2">
+            <div class="legal-section-header">
+                <div class="legal-section-number">2</div>
+                <h2>Description of Service</h2>
+            </div>
+            <p>SKU Campus Companion is a campus navigation and information platform designed for Sri Krishnadevaraya University (SKU) students, faculty, and visitors. The service provides:</p>
+            <ul class="legal-list">
+                <li>Campus navigation with real-time GPS and turn-by-turn directions</li>
+                <li>Information about listed places including academic buildings, hostels, libraries, cafeterias, banks, hospitals, and sports facilities</li>
+                <li>Smart Geo Camera for location-based photo detection</li>
+                <li>YouTube Channels to discover and share campus content</li>
+                <li>Emergency SOS with instant location sharing</li>
+                <li>Emergency Contacts for hospitals, hostels, and security</li>
+                <li>Push Notifications for important announcements</li>
+                <li>QR code generation for easy location sharing</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="legal-section" id="section-3">
+            <div class="legal-section-header">
+                <div class="legal-section-number">3</div>
+                <h2>User Responsibilities</h2>
+            </div>
+            <p>As a user of this App and Website, you agree to:</p>
+            <ul class="legal-list">
+                <li>Provide accurate profile information</li>
+                <li>Maintain the security of your account credentials</li>
+                <li>Not misuse the SOS emergency feature</li>
+                <li>Not share false or misleading content</li>
+                <li>Respect other users and campus property</li>
+                <li>Use the App and Website only for lawful purposes</li>
+                <li>Not attempt to gain unauthorized access to any part of the service</li>
+                <li>Not interfere with the proper working of the App or Website</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="legal-section" id="section-4">
+            <div class="legal-section-header">
+                <div class="legal-section-number">4</div>
+                <h2>Location Services</h2>
+            </div>
+            <p>The App requires location access for navigation features. Location data is used solely for providing directions and emergency services. By using navigation features:</p>
+            <ul class="legal-list">
+                <li>You consent to location tracking while the App is active</li>
+                <li>Your location may be shared with campus security during SOS activation only</li>
+                <li>Location data is not stored permanently on our servers</li>
+                <li>Navigation accuracy depends on your device's GPS and network conditions</li>
+            </ul>
+            <div class="legal-alert legal-alert-info">
+                <span class="material-symbols-outlined">info</span>
+                <div>Your location privacy is important to us. We only access location data when you actively use navigation features.</div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="legal-section" id="section-5">
+            <div class="legal-section-header">
+                <div class="legal-section-number">5</div>
+                <h2>User-Generated Content</h2>
+            </div>
+            <p>Users may add YouTube channels and edit place descriptions. By submitting content:</p>
+            <ul class="legal-list">
+                <li>You retain ownership of content you submit</li>
+                <li>You grant us a license to display and distribute your content within the App</li>
+                <li>We reserve the right to remove inappropriate or inaccurate content</li>
+                <li>You are responsible for ensuring your content does not violate any laws or third-party rights</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="legal-section" id="section-6">
+            <div class="legal-section-header">
+                <div class="legal-section-number">6</div>
+                <h2>Emergency Features</h2>
+            </div>
+            <p>The SOS feature shares your location with campus security. This feature should only be used in genuine emergencies. Misuse of the emergency feature may result in:</p>
+            <ul class="legal-list">
+                <li>Account suspension or termination</li>
+                <li>Notification to campus authorities</li>
+                <li>Legal action if applicable</li>
+            </ul>
+            <div class="legal-alert legal-alert-warning">
+                <span class="material-symbols-outlined">warning</span>
+                <div><strong>Important:</strong> False SOS activations are strictly prohibited and may lead to severe consequences.</div>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="legal-section" id="section-7">
+            <div class="legal-section-header">
+                <div class="legal-section-number">7</div>
+                <h2>Accuracy Disclaimer</h2>
+            </div>
+            <p>While we strive for accuracy, campus information may change without notice. Always verify critical information through official university channels. We make no warranties or representations about the accuracy, completeness, or reliability of any content on the App or Website.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="legal-section" id="section-8">
+            <div class="legal-section-header">
+                <div class="legal-section-number">8</div>
+                <h2>Limitation of Liability</h2>
+            </div>
+            <p>SKU Campus Companion and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the App or Website, including but not limited to:</p>
+            <ul class="legal-list">
+                <li>Navigation errors or inaccurate location data</li>
+                <li>Reliance on place descriptions or timings</li>
+                <li>Outdated information</li>
+                <li>Service interruptions or technical issues</li>
+            </ul>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="legal-section" id="section-9">
+            <div class="legal-section-header">
+                <div class="legal-section-number">9</div>
+                <h2>Modifications</h2>
+            </div>
+            <p>We reserve the right to modify or update these Terms and Conditions at any time without prior notice. Changes will be effective immediately upon posting. Your continued use of the App or Website after any modifications indicates your acceptance of the updated terms.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="legal-section" id="section-10">
+            <div class="legal-section-header">
+                <div class="legal-section-number">10</div>
+                <h2>Termination</h2>
+            </div>
+            <p>We may terminate or suspend your access to the App or Website immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms and Conditions.</p>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="legal-section" id="section-11">
+            <div class="legal-section-header">
+                <div class="legal-section-number">11</div>
+                <h2>Governing Law</h2>
+            </div>
+            <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the appropriate courts in Anantapur, Andhra Pradesh.</p>
+        </section>
+
+        <!-- Section 12 -->
+        <section class="legal-section" id="section-12">
+            <div class="legal-section-header">
+                <div class="legal-section-number">12</div>
+                <h2>Contact Information</h2>
+            </div>
+            <p>If you have any questions, concerns, or feedback regarding these Terms and Conditions, please contact us:</p>
+        </section>
+
+        <!-- Contact Card -->
+        <div class="legal-contact-card">
+            <span class="material-symbols-outlined">mail</span>
+            <h3>Have Questions?</h3>
+            <p>We're here to help. Reach out to us anytime.</p>
+            <a href="mailto:sameerbaba03@gmail.com" class="legal-contact-btn">
+                <span class="material-symbols-outlined">send</span>
+                sameerbaba03@gmail.com
+            </a>
+        </div>
+
+        <!-- Footer Info -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; color: var(--text-muted); font-size: 0.85rem;">
+            <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Home</a> · 
+                <a href="terms.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Terms</a> · 
+                <a href="privacy.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Privacy</a>
+            </p>
+        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
-        <p style="margin-top: 4px;">
-            <a href="index.html" style="color: var(--accent); text-decoration: none;">Home</a> | 
-            <a href="terms.html" style="color: var(--accent); text-decoration: none;">Terms & Conditions</a> |
-            <a href="privacy.html" style="color: var(--accent); text-decoration: none;">Privacy Policy</a>
-        </p>
-    </footer>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
 
-    <script src="script.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('readingProgress').style.width = scrolled + '%';
+            
+            // Back to Top visibility
+            const backToTop = document.getElementById('backToTop');
+            if (winScroll > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.legal-toc-list a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    const offset = 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Dark mode sync (reads theme from localStorage)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
 </body>
 </html>
