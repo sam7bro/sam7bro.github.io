@@ -213,6 +213,24 @@
             line-height: 1.3;
         }
         
+        .legal-section h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 20px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-section h3::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
         .legal-section p {
             color: var(--text-secondary);
             line-height: 1.8;
@@ -858,6 +876,9 @@
                 <h2>Termination</h2>
             </div>
             <p>We may terminate or suspend your access to the App or Website immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms and Conditions.</p>
+
+            <h3>Account Deletion</h3>
+            <p>You may delete your account at any time using the <strong>Delete Account</strong> option in the app (App Info &rarr; Account &rarr; Delete Account) or by emailing <a href="mailto:sameerbaba03@gmail.com?subject=Account%20Deletion%20Request" style="color:var(--accent);font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a>. Account deletion is permanent and cannot be undone. Upon deletion, your account record, targeted notifications, and Firebase Authentication account will be removed. For details on data retained after deletion (such as creator credit on YouTube channels you added and admin audit logs), please see our <a href="delete-account.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Delete Account page</a> and <a href="privacy.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Privacy Policy</a>.</p>
         </section>
 
         <!-- Section 11 -->
@@ -895,7 +916,8 @@
             <p style="margin-top: 8px;">
                 <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Home</a> · 
                 <a href="terms.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Terms</a> · 
-                <a href="privacy.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Privacy</a>
+                <a href="privacy.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Privacy</a> · 
+                <a href="delete-account.html" style="color: var(--accent); text-decoration: none; font-weight: 500;">Delete Account</a>
             </p>
         </div>
 
