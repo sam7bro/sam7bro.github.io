@@ -10,7 +10,7 @@
         /* ============================================
            LEGAL PAGES - MODERN UI/UX (PRIVACY)
            ============================================ */
-        
+
         .legal-hero {
             position: relative;
             padding: 40px 24px 60px;
@@ -19,7 +19,7 @@
             margin-bottom: -40px;
             overflow: hidden;
         }
-        
+
         .legal-hero::before {
             content: '';
             position: absolute;
@@ -31,7 +31,7 @@
             border-radius: 50%;
             pointer-events: none;
         }
-        
+
         .legal-hero::after {
             content: '';
             position: absolute;
@@ -43,14 +43,14 @@
             border-radius: 50%;
             pointer-events: none;
         }
-        
+
         .legal-hero-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
-        
+
         .legal-back-btn {
             display: inline-flex;
             align-items: center;
@@ -66,17 +66,17 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
-        
+
         .legal-back-btn:hover {
             background: rgba(255, 255, 255, 0.25);
             gap: 10px;
             transform: translateX(-3px);
         }
-        
+
         .legal-back-btn .material-symbols-outlined {
             font-size: 20px;
         }
-        
+
         .legal-hero-icon {
             width: 70px;
             height: 70px;
@@ -89,12 +89,12 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .legal-hero-icon .material-symbols-outlined {
             font-size: 40px;
             color: white;
         }
-        
+
         .legal-hero h1 {
             font-size: 2.2rem;
             font-weight: 800;
@@ -103,7 +103,7 @@
             letter-spacing: -0.5px;
             line-height: 1.2;
         }
-        
+
         .legal-hero-subtitle {
             color: rgba(255, 255, 255, 0.85);
             font-size: 1rem;
@@ -111,14 +111,14 @@
             max-width: 500px;
             line-height: 1.5;
         }
-        
+
         .legal-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 16px;
         }
-        
+
         .legal-meta-chip {
             display: inline-flex;
             align-items: center;
@@ -132,11 +132,11 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .legal-meta-chip .material-symbols-outlined {
             font-size: 16px;
         }
-        
+
         .legal-container {
             max-width: 800px;
             margin: 0 auto;
@@ -144,7 +144,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .legal-section {
             background: var(--bg-card);
             border-radius: 20px;
@@ -156,7 +156,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .legal-section::before {
             content: '';
             position: absolute;
@@ -169,23 +169,23 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .legal-section:hover::before {
             opacity: 1;
         }
-        
+
         .legal-section:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-2px);
         }
-        
+
         .legal-section-header {
             display: flex;
             align-items: center;
             gap: 14px;
             margin-bottom: 16px;
         }
-        
+
         .legal-section-number {
             width: 40px;
             height: 40px;
@@ -200,7 +200,7 @@
             font-size: 1rem;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
         }
-        
+
         .legal-section h2 {
             font-size: 1.2rem;
             font-weight: 700;
@@ -209,7 +209,7 @@
             flex: 1;
             line-height: 1.3;
         }
-        
+
         .legal-section h3 {
             font-size: 1.05rem;
             font-weight: 700;
@@ -219,7 +219,7 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .legal-section h3::before {
             content: '';
             width: 4px;
@@ -227,24 +227,24 @@
             background: #10b981;
             border-radius: 2px;
         }
-        
+
         .legal-section p {
             color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 14px;
             font-size: 0.95rem;
         }
-        
+
         .legal-section p:last-child {
             margin-bottom: 0;
         }
-        
+
         .legal-list {
             list-style: none;
             padding: 0;
             margin: 12px 0;
         }
-        
+
         .legal-list li {
             position: relative;
             padding: 10px 0 10px 32px;
@@ -253,11 +253,11 @@
             line-height: 1.6;
             border-bottom: 1px solid var(--border);
         }
-        
+
         .legal-list li:last-child {
             border-bottom: none;
         }
-        
+
         .legal-list li::before {
             content: '';
             position: absolute;
@@ -269,7 +269,7 @@
             border-radius: 50%;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
         }
-        
+
         .legal-alert {
             display: flex;
             gap: 12px;
@@ -279,43 +279,43 @@
             font-size: 0.9rem;
             line-height: 1.6;
         }
-        
+
         .legal-alert .material-symbols-outlined {
             font-size: 22px;
             flex-shrink: 0;
         }
-        
+
         .legal-alert-info {
             background: #dbeafe;
             color: #1e3a5f;
             border: 1px solid #2563eb;
         }
-        
+
         .legal-alert-info .material-symbols-outlined {
             color: #2563eb;
         }
-        
+
         [data-theme="dark"] .legal-alert-info {
             background: #1e3a5f;
             color: #dbeafe;
         }
-        
+
         .legal-alert-success {
             background: #d1fae5;
             color: #064e3b;
             border: 1px solid #10b981;
         }
-        
+
         .legal-alert-success .material-symbols-outlined {
             color: #10b981;
         }
-        
+
         [data-theme="dark"] .legal-alert-success {
             background: #064e3b;
             color: #d1fae5;
             border-color: #10b981;
         }
-        
+
         .legal-contact-card {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             border-radius: 20px;
@@ -327,7 +327,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .legal-contact-card::before {
             content: '';
             position: absolute;
@@ -339,13 +339,13 @@
             border-radius: 50%;
             pointer-events: none;
         }
-        
+
         .legal-contact-card .material-symbols-outlined {
             font-size: 48px;
             margin-bottom: 12px;
             opacity: 0.95;
         }
-        
+
         .legal-contact-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
@@ -353,7 +353,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .legal-contact-card p {
             font-size: 0.95rem;
             opacity: 0.9;
@@ -361,7 +361,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .legal-contact-btn {
             display: inline-flex;
             align-items: center;
@@ -378,12 +378,12 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .legal-contact-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
         }
-        
+
         .legal-toc {
             background: var(--bg-card);
             border-radius: 20px;
@@ -392,7 +392,7 @@
             border: 1px solid var(--border);
             box-shadow: var(--shadow-sm);
         }
-        
+
         .legal-toc-header {
             display: flex;
             align-items: center;
@@ -401,19 +401,19 @@
             padding-bottom: 12px;
             border-bottom: 2px solid var(--border);
         }
-        
+
         .legal-toc-header .material-symbols-outlined {
             color: #10b981;
             font-size: 24px;
         }
-        
+
         .legal-toc-header h3 {
             font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-primary);
             margin: 0;
         }
-        
+
         .legal-toc-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -422,7 +422,7 @@
             padding: 0;
             margin: 0;
         }
-        
+
         .legal-toc-list a {
             display: flex;
             align-items: center;
@@ -434,20 +434,20 @@
             border-radius: 8px;
             transition: all 0.2s ease;
         }
-        
+
         .legal-toc-list a:hover {
             background: rgba(16, 185, 129, 0.1);
             color: #10b981;
             transform: translateX(3px);
         }
-        
+
         .legal-toc-list a::before {
             content: '→';
             color: #10b981;
             font-weight: 700;
             opacity: 0.6;
         }
-        
+
         .legal-table {
             width: 100%;
             border-collapse: separate;
@@ -458,7 +458,7 @@
             box-shadow: var(--shadow-sm);
             font-size: 0.9rem;
         }
-        
+
         .legal-table th {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
@@ -469,27 +469,27 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .legal-table td {
             padding: 14px 16px;
             color: var(--text-secondary);
             border-bottom: 1px solid var(--border);
             background: var(--bg-card);
         }
-        
+
         .legal-table tr:last-child td {
             border-bottom: none;
         }
-        
+
         .legal-table tr:hover td {
             background: rgba(16, 185, 129, 0.05);
         }
-        
+
         .legal-table td:first-child {
             font-weight: 600;
             color: var(--text-primary);
         }
-        
+
         .back-to-top {
             position: fixed;
             bottom: 24px;
@@ -511,18 +511,18 @@
             transition: all 0.3s ease;
             z-index: 500;
         }
-        
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .back-to-top:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
         }
-        
+
         .reading-progress {
             position: fixed;
             top: 0;
@@ -533,107 +533,107 @@
             z-index: 9999;
             transition: width 0.1s ease;
         }
-        
+
         @media (max-width: 768px) {
             .legal-hero {
                 padding: 30px 20px 50px;
             }
-            
+
             .legal-hero h1 {
                 font-size: 1.7rem;
             }
-            
+
             .legal-hero-icon {
                 width: 60px;
                 height: 60px;
             }
-            
+
             .legal-hero-icon .material-symbols-outlined {
                 font-size: 32px;
             }
-            
+
             .legal-container {
                 padding: 40px 16px 60px;
             }
-            
+
             .legal-section {
                 padding: 20px;
                 border-radius: 16px;
             }
-            
+
             .legal-section-header {
                 gap: 12px;
             }
-            
+
             .legal-section-number {
                 width: 36px;
                 height: 36px;
                 min-width: 36px;
                 font-size: 0.9rem;
             }
-            
+
             .legal-section h2 {
                 font-size: 1.05rem;
             }
-            
+
             .legal-toc-list {
                 grid-template-columns: 1fr;
             }
-            
+
             .legal-contact-card {
                 padding: 24px 20px;
             }
-            
+
             .legal-contact-card h3 {
                 font-size: 1.15rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .legal-hero {
                 padding: 24px 16px 40px;
                 border-radius: 0 0 24px 24px;
             }
-            
+
             .legal-hero h1 {
                 font-size: 1.5rem;
             }
-            
+
             .legal-hero-subtitle {
                 font-size: 0.9rem;
             }
-            
+
             .legal-meta {
                 gap: 8px;
             }
-            
+
             .legal-meta-chip {
                 padding: 5px 10px;
                 font-size: 0.72rem;
             }
-            
+
             .legal-section {
                 padding: 18px;
             }
-            
+
             .legal-section h2 {
                 font-size: 1rem;
             }
-            
+
             .legal-section p,
             .legal-list li {
                 font-size: 0.88rem;
             }
-            
+
             .legal-table {
                 font-size: 0.8rem;
             }
-            
+
             .legal-table th,
             .legal-table td {
                 padding: 10px 12px;
             }
-            
+
             .back-to-top {
                 bottom: 16px;
                 right: 16px;
@@ -654,28 +654,28 @@
                 <span class="material-symbols-outlined">arrow_back</span>
                 Back to Home
             </a>
-            
+
             <div class="legal-hero-icon">
                 <span class="material-symbols-outlined">shield</span>
             </div>
-            
+
             <h1>Privacy Policy</h1>
             <p class="legal-hero-subtitle">
                 Your privacy matters. Learn how we collect, use, and protect your personal information.
             </p>
-            
+
             <div class="legal-meta">
                 <span class="legal-meta-chip">
                     <span class="material-symbols-outlined">calendar_today</span>
-                    Last Updated: September 2025
+                    Last Updated: September 27, 2026
                 </span>
                 <span class="legal-meta-chip">
                     <span class="material-symbols-outlined">schedule</span>
-                    ~7 min read
+                    ~9 min read
                 </span>
                 <span class="legal-meta-chip">
                     <span class="material-symbols-outlined">verified_user</span>
-                    GDPR Compliant
+                    GDPR &amp; DPDP Compliant
                 </span>
             </div>
         </div>
@@ -691,12 +691,15 @@
                 <h3>Quick Navigation</h3>
             </div>
             <ul class="legal-toc-list">
+                <li><a href="#section-0">Who We Are</a></li>
                 <li><a href="#section-1">Information We Collect</a></li>
                 <li><a href="#section-2">How We Use It</a></li>
                 <li><a href="#section-3">Information Sharing</a></li>
                 <li><a href="#section-4">Data Security</a></li>
                 <li><a href="#section-5">Data Retention</a></li>
                 <li><a href="#section-6">Your Rights</a></li>
+                <li><a href="#section-6a">India DPDP Act</a></li>
+                <li><a href="#section-6b">Grievance Officer</a></li>
                 <li><a href="#section-7">Children's Privacy</a></li>
                 <li><a href="#section-8">Permissions Used</a></li>
                 <li><a href="#section-9">Third-Party Services</a></li>
@@ -715,32 +718,45 @@
             </div>
         </div>
 
+        <!-- Section 0 — Who We Are -->
+        <section class="legal-section" id="section-0">
+            <div class="legal-section-header">
+                <div class="legal-section-number">0</div>
+                <h2>Who We Are</h2>
+            </div>
+            <p>This Privacy Policy applies to <strong>SKU Campus Companion</strong> (the &quot;App&quot;), operated by <strong>Sameer Baba</strong> (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;), an independent developer based in Anantapur, Andhra Pradesh, India.</p>
+            <p><strong>Contact:</strong> <a href="mailto:sameerbaba03@gmail.com" style="color:#10b981;font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a></p>
+        </section>
+
         <!-- Section 1 -->
         <section class="legal-section" id="section-1">
             <div class="legal-section-header">
                 <div class="legal-section-number">1</div>
                 <h2>Information We Collect</h2>
             </div>
-            
+
             <h3>1.1 Personal Information You Provide</h3>
             <ul class="legal-list">
                 <li><strong>Profile Information:</strong> Full name, email address, phone number, branch, year of study, gender</li>
                 <li><strong>Account Credentials:</strong> Login information for authentication</li>
                 <li><strong>User Content:</strong> YouTube channel links, place descriptions you edit</li>
             </ul>
-            
+
             <h3>1.2 Automatically Collected Information</h3>
             <ul class="legal-list">
-                <li><strong>Location Data:</strong> GPS coordinates when using navigation features (only while app is in use)</li>
-                <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
-                <li><strong>Usage Data:</strong> Features accessed, time spent, interaction patterns</li>
-                <li><strong>Camera Access:</strong> Only when you use the Geo Camera feature</li>
+                <li><strong>Location Data:</strong> GPS coordinates when using navigation, emergency SOS, or the Geo Camera feature. This is only collected while the app is in use.</li>
+                <li><strong>Device Information:</strong> Device model, Android version, app version, language, and screen size.</li>
+                <li><strong>Unique Device Identifiers:</strong> Firebase Cloud Messaging (FCM) token for push notifications, and Google Advertising ID (GAID) if you have not opted out of personalized ads.</li>
+                <li><strong>Usage Data:</strong> Screens viewed, features used, session duration, and crash/error reports.</li>
+                <li><strong>Camera Access:</strong> Photos taken via the in-app Geo Camera feature are processed on your device and are not uploaded to our servers.</li>
+                <li><strong>Log Data:</strong> IP address (for Firebase authentication and abuse prevention), timestamps, and error logs.</li>
             </ul>
-            
+
             <h3>1.3 Information from Third Parties</h3>
             <ul class="legal-list">
-                <li><strong>Firebase Services:</strong> Authentication, Firestore database, Cloud Messaging</li>
-                <li><strong>Google AdMob:</strong> Advertising identifiers (if ads are enabled)</li>
+                <li><strong>Google Sign-In:</strong> If you sign in with Google, we receive your name, email address, and profile picture URL.</li>
+                <li><strong>Firebase Services (Google):</strong> Authentication, Firestore database storage, Cloud Messaging token, Analytics events, and Crashlytics reports.</li>
+                <li><strong>Google AdMob:</strong> Advertising identifier and coarse location (if you allow) for ad relevance. See Section 10.</li>
             </ul>
         </section>
 
@@ -828,7 +844,40 @@
                 <li><strong>Opt-out:</strong> Disable notifications or location services</li>
                 <li><strong>Portability:</strong> Request data in portable format</li>
             </ul>
-            <p>To exercise these rights, contact: <a href="mailto:sameerbaba03@gmail.com" style="color: #10b981; font-weight: 600; text-decoration: none;">sameerbaba03@gmail.com</a></p>
+            <p>To exercise these rights, contact: <a href="mailto:sameerbaba03@gmail.com" style="color:#10b981;font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a></p>
+        </section>
+
+        <!-- Section 6A — India DPDP Act -->
+        <section class="legal-section" id="section-6a">
+            <div class="legal-section-header">
+                <div class="legal-section-number">6A</div>
+                <h2>India — Digital Personal Data Protection Act, 2023</h2>
+            </div>
+            <p>If you are located in India, you have the following rights under the Digital Personal Data Protection Act, 2023 (&quot;DPDP Act&quot;):</p>
+            <ul class="legal-list">
+                <li><strong>Right to Access:</strong> Request a summary of your personal data we process and the identities of third parties with whom we share it.</li>
+                <li><strong>Right to Correction:</strong> Request correction, completion, or updating of your personal data.</li>
+                <li><strong>Right to Erasure:</strong> Request deletion of your personal data (see Section 13).</li>
+                <li><strong>Right to Grievance Redressal:</strong> Lodge a complaint with us first, and if unresolved, with the Data Protection Board of India.</li>
+                <li><strong>Right to Nominate:</strong> Nominate another person to exercise your rights in the event of your death or incapacity.</li>
+            </ul>
+            <p><strong>Consent:</strong> By creating an account, you provide free, specific, informed, unconditional, and unambiguous consent for us to process your personal data as described in this Policy. You may withdraw consent at any time by deleting your account or emailing us.</p>
+            <p><strong>Data Fiduciary:</strong> Sameer Baba<br>
+            <strong>Data Protection Officer:</strong> Sameer Baba (<a href="mailto:sameerbaba03@gmail.com" style="color:#10b981;font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a>)</p>
+        </section>
+
+        <!-- Section 6B — Grievance Officer -->
+        <section class="legal-section" id="section-6b">
+            <div class="legal-section-header">
+                <div class="legal-section-number">6B</div>
+                <h2>Grievance Officer (India)</h2>
+            </div>
+            <p>In accordance with the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, the details of our Grievance Officer are:</p>
+            <p>
+                <strong>Grievance Officer:</strong> Sameer Baba<br>
+                <strong>Email:</strong> <a href="mailto:sameerbaba03@gmail.com" style="color:#10b981;font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a><br>
+                <strong>Response Time:</strong> Within 24 hours acknowledgment; resolution within 15 days
+            </p>
         </section>
 
         <!-- Section 7 -->
@@ -837,7 +886,9 @@
                 <div class="legal-section-number">7</div>
                 <h2>Children's Privacy</h2>
             </div>
-            <p>The App is intended for university students (18+). We do not knowingly collect information from children under 13. If we learn we have collected such information, we will delete it promptly.</p>
+            <p>SKU Campus Companion is designed for students and staff of Sri Krishnadevaraya University, who are typically aged 17 and above. We do not knowingly collect personal information from children under 13. If you are under 13, please do not use the App.</p>
+            <p>If we learn that we have inadvertently collected personal information from a child under 13, we will delete it promptly. If you are a parent or guardian and believe your child has provided us personal information, please contact us at <a href="mailto:sameerbaba03@gmail.com" style="color:#10b981;font-weight:600;text-decoration:none;">sameerbaba03@gmail.com</a>.</p>
+            <p><strong>Play Store Age Rating:</strong> This App is rated 13+ on Google Play.</p>
         </section>
 
         <!-- Section 8 -->
@@ -891,6 +942,7 @@
                 <li><strong>Google AdMob:</strong> Advertising services (if enabled)</li>
                 <li><strong>OpenStreetMap:</strong> Map tile data</li>
                 <li><strong>OSRM Routing:</strong> Route calculation</li>
+                <li><strong>YouTube Data API v3:</strong> Public channel metadata (no user data transmitted)</li>
             </ul>
         </section>
 
@@ -900,13 +952,19 @@
                 <div class="legal-section-number">10</div>
                 <h2>Advertising</h2>
             </div>
-            <p>If ads are displayed:</p>
+            <p>We display ads through <strong>Google AdMob</strong> to keep the App free for all students. AdMob may collect:</p>
             <ul class="legal-list">
-                <li>We use Google AdMob for advertising</li>
-                <li>AdMob may collect device identifiers for ad personalization</li>
-                <li>You can opt-out of personalized ads in device settings</li>
-                <li>Some users may have ads disabled based on permissions</li>
+                <li>Your <strong>Google Advertising ID (GAID)</strong> — a resettable identifier</li>
+                <li>Device type, model, and OS version</li>
+                <li>Coarse location (country-level, from IP address)</li>
+                <li>Ad interaction data (impressions, clicks)</li>
             </ul>
+            <p><strong>How to opt out of personalized ads:</strong></p>
+            <ul class="legal-list">
+                <li><strong>Android:</strong> Settings → Google → Ads → &quot;Delete advertising ID&quot; or &quot;Opt out of Ads Personalization&quot;.</li>
+                <li><strong>Within the App:</strong> Some users (campus staff, faculty) can request ads to be disabled by emailing us.</li>
+            </ul>
+            <p>For more information, see Google's <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" style="color:#10b981;font-weight:600;text-decoration:none;">Advertising Policies</a>.</p>
         </section>
 
         <!-- Section 11 -->
@@ -927,7 +985,7 @@
             <p>We may update this Privacy Policy periodically. We will notify you of significant changes through the App or email.</p>
         </section>
 
-        <!-- Section 13 — Account Deletion (NEW) -->
+        <!-- Section 13 — Account Deletion -->
         <section class="legal-section" id="section-13">
             <div class="legal-section-header">
                 <div class="legal-section-number">13</div>
@@ -946,7 +1004,7 @@
             <h3>Data retained after deletion</h3>
             <ul class="legal-list">
                 <li><strong>YouTube channels you added</strong> remain visible to other users, with your display name kept as creator credit. All other personal data linked to the channel is removed. You may request removal of the retained credit name by emailing us.</li>
-                <li><strong>Admin audit logs</strong> (if you were an administrator) are retained for security, fraud prevention, and legal compliance. These logs contain your name, the action performed, and a timestamp.</li>
+                <li><strong>Admin audit logs</strong> (if you were an administrator) are retained for security, fraud prevention, and legal compliance for up to <strong>12 months</strong>. These logs contain your name, the action performed, and a timestamp.</li>
                 <li><strong>Public app data</strong> such as campus places, app info, and broadcast notifications are unaffected.</li>
             </ul>
 
@@ -966,13 +1024,12 @@
 
         <!-- Footer Info -->
         <div style="text-align: center; margin-top: 40px; padding: 20px; color: var(--text-muted); font-size: 0.85rem;">
-              <strong>Effective Date:</strong> September 27, 2026 &nbsp;·&nbsp;
-  <strong>Last Updated:</strong> September 27, 2026
-            <p>&copy; 2025 SKU Campus Companion. All rights reserved.</p>
+            <p><strong>Effective Date:</strong> September 27, 2026 &nbsp;·&nbsp; <strong>Last Updated:</strong> September 27, 2026</p>
+            <p>&copy; 2026 SKU Campus Companion. All rights reserved.</p>
             <p style="margin-top: 8px;">
-                <a href="index.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Home</a> · 
-                <a href="terms.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Terms</a> · 
-                <a href="privacy.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Privacy</a> · 
+                <a href="index.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Home</a> ·
+                <a href="terms.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Terms</a> ·
+                <a href="privacy.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Privacy</a> ·
                 <a href="delete-account.html" style="color: #10b981; text-decoration: none; font-weight: 500;">Delete Account</a>
             </p>
         </div>
@@ -991,7 +1048,7 @@
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById('readingProgress').style.width = scrolled + '%';
-            
+
             const backToTop = document.getElementById('backToTop');
             if (winScroll > 400) {
                 backToTop.classList.add('visible');
